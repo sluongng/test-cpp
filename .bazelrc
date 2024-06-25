@@ -6,9 +6,9 @@ common --experimental_platform_in_output_dir
 common --host_cxxopt=-std=c++20
 common --cxxopt=-std=c++20
 
-common --bes_results_url=https://buildbuddy.buildbuddy.io/invocation/
-common --bes_backend=grpcs://buildbuddy.buildbuddy.io
-common --remote_cache=grpcs://buildbuddy.buildbuddy.io
+common --bes_results_url=https://app.buildbuddy.io/invocation/
+common --bes_backend=grpcs://remote.buildbuddy.io
+common --remote_cache=grpcs://remote.buildbuddy.io
 common --remote_cache_compression
 
 common --remote_upload_local_results
