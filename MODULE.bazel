@@ -1,0 +1,9 @@
+bazel_dep(name = "buildbuddy_toolchain", repo_name = "buildbuddy")
+git_override(
+    module_name = "buildbuddy_toolchain",
+    commit = "1407e5865e102b3d9de46dc9f610de04e5a401f0",
+    remote = "https://github.com/buildbuddy-io/buildbuddy-toolchain.git",
+)
+
+buildbuddy = use_extension("@buildbuddy//:extensions.bzl", "buildbuddy")
+use_repo(buildbuddy, "buildbuddy_toolchains")

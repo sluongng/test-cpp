@@ -1,0 +1,26 @@
+common --lockfile_mode=update
+
+common --incompatible_strict_action_env
+common --experimental_platform_in_output_dir
+
+common --host_cxxopt=-std=c++20
+common --cxxopt=-std=c++20
+
+common --bes_results_url=https://buildbuddy.buildbuddy.io/invocation/
+common --bes_backend=grpcs://buildbuddy.buildbuddy.io
+common --remote_cache=grpcs://buildbuddy.buildbuddy.io
+common --remote_cache_compression
+
+common --remote_upload_local_results
+common --remote_timeout=600
+common --remote_download_minimal
+common --jobs=100
+common --verbose_failures
+common --platforms=//:linux_gcc_13
+common --extra_execution_platforms=//:linux_gcc_13
+common --extra_toolchains=@buildbuddy_toolchains//:ubuntu_cc_toolchain
+common --remote_executor=grpcs://buildbuddy.buildbuddy.io
+
+# Example user.bazelrc
+# build --remote_header=x-buildbuddy-api-key=aaaabbbbbxxxxcccc
+try-import %workspace%/user.bazelrc
